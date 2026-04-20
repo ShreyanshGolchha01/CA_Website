@@ -42,6 +42,7 @@ export function Contact() {
       name: String(formData.get("name") ?? "").trim(),
       email: String(formData.get("email") ?? "").trim(),
       phone: String(formData.get("phone") ?? "").trim(),
+      subject: String(formData.get("subject") ?? "").trim(),
       message: String(formData.get("message") ?? "").trim(),
     };
 
@@ -50,10 +51,8 @@ export function Contact() {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
         body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/json" },
       });
 
       const result = (await response
@@ -243,6 +242,13 @@ export function Contact() {
                     {sectionContent.contact.formLabels.phone}
                   </label>
                   <Input id="phone" name="phone" type="tel" required aria-label="Your phone number" />
+                </div>
+
+                <div>
+                  <label htmlFor="subject" className="mb-1.5 block text-base font-medium text-brand-text">
+                    {sectionContent.contact.formLabels.subject}
+                  </label>
+                  <Input id="subject" name="subject" aria-label="Message subject" />
                 </div>
 
                 <div>

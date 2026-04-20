@@ -1,43 +1,32 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Contact Form Email Integration
+## Contact Form Google Sheets Integration
 
-The contact form now sends submissions to email through `app/api/contact/route.ts`.
-Each email is sent in a clear table format with:
+The contact form submits data to `app/api/contact/route.ts`, and that route forwards the payload to your Google Apps Script Web App.
+The sheet receives these fields:
 
+- Timestamp
 - Name
 - Email
 - Phone
+- Subject
 - Message
-- Submitted time
-- User agent
 
 ### Setup
 
-1. Create a `.env.local` file in the project root.
-2. Copy values from `.env.example`.
-3. Fill SMTP credentials:
+1. Deploy your Apps Script as a Web App.
+2. Set access to `Anyone`.
+3. Create a `.env.local` file and add:
 
 ```bash
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
-CONTACT_RECEIVER_EMAIL=caankitlunawat@gmail.com
-CONTACT_FROM_EMAIL=your-email@gmail.com
+CONTACT_GOOGLE_SCRIPT_URL=https://script.google.com/macros/s/AKfycbyFoB8L3cUFqAd4gf7g2RyZXhTgi1Wn2wKPp39rr5b7EOVbSuCjkvvZoOLF5A22061F/exec
 ```
 
-Notes:
+4. Restart the dev server.
 
-- For Gmail, use an App Password (not your normal login password).
-- If `CONTACT_RECEIVER_EMAIL` is not provided, emails are sent to the `firmInfo.email` value from `data/mock.ts`.
-- After editing `.env.local`, restart the dev server.
+### Why this works
 
-### Troubleshooting
-
-- `Email service is not configured (...)`: one or more SMTP values are missing in `.env.local`.
-- `SMTP authentication failed`: credentials are wrong, or Gmail App Password is not used.
-- `Unable to connect to the email server`: check SMTP host/port and internet/firewall.
+Direct browser calls to Apps Script can fail due to CORS. This project avoids that by posting to the local Next.js API route first, then sending the data server-to-server to Apps Script.
 
 ## Getting Started
 

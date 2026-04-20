@@ -14,6 +14,8 @@ import {
 } from "@/data/mock";
 import { cn } from "@/lib/utils";
 
+import { Card, CardContent } from "./ui/card";
+
 type NewsLanguage = "hi" | "en" | "mr";
 
 const languageOptions: Array<{ value: NewsLanguage; label: string }> = [

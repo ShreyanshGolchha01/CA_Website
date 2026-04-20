@@ -391,8 +391,8 @@ export const sectionContent = {
   },
   news: {
     title: "Articles and Blogs",
-    // subtitle:
-    //   "Media coverage highlighting our work in taxation, audit, and compliance across trusted publications.",
+    subtitle:
+      "Media coverage highlighting our work in taxation, audit, and compliance across trusted publications.",
     featuredInTitle: "Also Featured In",
     interviewsTitle: "TV & Video Mentions",
     interviewsSubtitle: "Optional interview embeds can be added here whenever links are available.",
@@ -419,6 +419,7 @@ export const sectionContent = {
       name: "Name",
       email: "Email",
       phone: "Phone",
+      subject: "Subject",
       message: "Message",
       messagePlaceholder: "Write your query here",
       submit: "Submit",
@@ -426,7 +427,7 @@ export const sectionContent = {
     },
     successTitle: "Message submitted successfully.",
     successDescription:
-      "Your details have been shared with our team by email. We will contact you shortly.",
+      "Your details have been recorded successfully. We will contact you shortly.",
     errorTitle: "Unable to send message.",
     errorDescription:
       "Please try again in a moment, or contact us directly via phone or email.",
