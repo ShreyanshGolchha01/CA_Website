@@ -58,10 +58,10 @@ export function Services() {
                     <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-gold/30 bg-brand-gold/10 transition-colors group-hover:bg-brand-gold/20">
                       <Icon className="h-5 w-5 text-brand-navy" aria-hidden="true" />
                     </div>
-                    <CardTitle className="text-lg leading-snug text-brand-navy">{service.title}</CardTitle>
+                    <CardTitle className="text-xl leading-snug text-brand-navy">{service.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm leading-6 text-brand-light">{service.description}</p>
+                    <p className="text-base leading-7 text-brand-light">{service.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>

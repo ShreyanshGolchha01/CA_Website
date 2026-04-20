@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" fill="#F8F3EA"/>
+  <rect x="36" y="36" width="1128" height="828" rx="18" fill="#FFFFFF" stroke="#E7D8BD" stroke-width="2"/>
+  <rect x="70" y="56" width="170" height="38" rx="6" fill="#E7E0D1"/>
+  <text x="155" y="82" text-anchor="middle" fill="#231F20" font-family="Arial, sans-serif" font-size="22" font-weight="700">नईदुनिया</text>
+  <rect x="286" y="56" width="460" height="38" rx="4" fill="#C23B3A"/>
+  <text x="516" y="82" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="25" font-weight="700">शहर अपना शहर</text>
+  <text x="75" y="120" fill="#7B7B7B" font-family="Arial, sans-serif" font-size="18">Friday, 12 Dec 2025</text>
+
+  <rect x="72" y="146" width="340" height="602" rx="14" fill="#FCFAF6" stroke="#E8DDC8"/>
+  <rect x="96" y="178" width="94" height="126" rx="10" fill="#DAD4C7"/>
+  <rect x="208" y="178" width="166" height="126" rx="10" fill="#DAD4C7"/>
+  <text x="210" y="340" fill="#1F1A17" font-family="Arial, sans-serif" font-size="64" font-weight="700">आरबीआई</text>
+  <text x="92" y="392" fill="#1F1A17" font-family="Arial, sans-serif" font-size="40" font-weight="700">की रेपो रेट में</text>
+  <text x="92" y="438" fill="#1F1A17" font-family="Arial, sans-serif" font-size="40" font-weight="700">कटौती से राहत</text>
+  <text x="92" y="484" fill="#1F1A17" font-family="Arial, sans-serif" font-size="40" font-weight="700">संभव</text>
+  <rect x="96" y="520" width="280" height="8" fill="#D0C5AF"/>
+  <rect x="96" y="548" width="240" height="8" fill="#E0D7C5"/>
+  <rect x="96" y="570" width="280" height="8" fill="#E0D7C5"/>
+  <rect x="96" y="592" width="260" height="8" fill="#E0D7C5"/>
+  <rect x="96" y="614" width="280" height="8" fill="#E0D7C5"/>
+  <rect x="96" y="636" width="220" height="8" fill="#E0D7C5"/>
+  <rect x="96" y="678" width="74" height="92" rx="8" fill="#C8B9A2"/>
+  <text x="140" y="790" text-anchor="middle" fill="#5D4A3A" font-family="Arial, sans-serif" font-size="16">CA</text>
+
+  <rect x="440" y="146" width="682" height="602" rx="14" fill="#FFFDF8" stroke="#E8DDC8"/>
+  <rect x="470" y="176" width="170" height="120" rx="10" fill="#D8D0C1"/>
+  <text x="515" y="248" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700">PHOTO</text>
+  <text x="670" y="194" fill="#202020" font-family="Arial, sans-serif" font-size="38" font-weight="700">शहर को बस, नहीं</text>
+  <text x="670" y="236" fill="#202020" font-family="Arial, sans-serif" font-size="38" font-weight="700">अतिक्रमण मुक्त</text>
+  <text x="670" y="278" fill="#202020" font-family="Arial, sans-serif" font-size="38" font-weight="700">कर दें, तो बन</text>
+  <text x="670" y="320" fill="#202020" font-family="Arial, sans-serif" font-size="38" font-weight="700">जाएगा महानगर</text>
+  <rect x="470" y="350" width="570" height="8" fill="#E6D7C2"/>
+  <rect x="470" y="382" width="530" height="8" fill="#E6D7C2"/>
+  <rect x="470" y="404" width="560" height="8" fill="#E6D7C2"/>
+  <rect x="470" y="426" width="500" height="8" fill="#E6D7C2"/>
+  <rect x="470" y="456" width="246" height="154" rx="10" fill="#D8D0C1"/>
+  <rect x="736" y="456" width="246" height="154" rx="10" fill="#D8D0C1"/>
+  <rect x="470" y="636" width="512" height="8" fill="#E6D7C2"/>
+  <rect x="470" y="658" width="530" height="8" fill="#E6D7C2"/>
+  <rect x="470" y="680" width="490" height="8" fill="#E6D7C2"/>
+  <rect x="470" y="702" width="546" height="8" fill="#E6D7C2"/>
+</svg>

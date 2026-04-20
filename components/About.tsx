@@ -14,6 +14,8 @@ const iconMap = {
 };
 
 export function About() {
+  const aboutDescription = firmInfo.about || sectionContent.about.placeholderDescription;
+
   return (
     <section id="about" className="bg-brand-ivory py-16 sm:py-20" aria-label="About section">
       <div className="section-frame">
@@ -25,7 +27,7 @@ export function About() {
         >
           <h2 className="section-title">{sectionContent.about.title}</h2>
           <div className="gold-divider" />
-          <p className="section-subtitle">{firmInfo.about}</p>
+          <p className="section-subtitle">{aboutDescription}</p>
         </motion.div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -34,7 +36,9 @@ export function About() {
               <CardTitle className="text-lg text-brand-navy">ICAI Membership</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-brand-light">{firmInfo.icaiMembershipNumber}</p>
+              <p className="text-base text-brand-light">
+                {firmInfo.icaiMembershipNumber || sectionContent.about.registrationPending}
+              </p>
             </CardContent>
           </Card>
           <Card>
@@ -42,7 +46,9 @@ export function About() {
               <CardTitle className="text-lg text-brand-navy">Firm Registration</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-brand-light">{firmInfo.frn}</p>
+              <p className="text-base text-brand-light">
+                {firmInfo.frn || sectionContent.about.registrationPending}
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -66,7 +72,7 @@ export function About() {
                     <CardTitle className="text-xl text-brand-navy">{pillar.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm leading-7 text-brand-light">{pillar.description}</p>
+                    <p className="text-base leading-7 text-brand-light">{pillar.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>

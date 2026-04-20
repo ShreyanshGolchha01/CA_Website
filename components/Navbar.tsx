@@ -20,6 +20,8 @@ import {
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const firmDisplayName = firmInfo.name || "CA Firm";
+  const showComplianceBanner = Boolean(firmInfo.complianceBanner.trim());
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,9 +34,11 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50">
-      <div className="border-b border-brand-gold/30 bg-brand-navy px-4 py-2 text-center text-xs text-brand-ivory sm:text-sm">
-        {firmInfo.complianceBanner}
-      </div>
+      {showComplianceBanner ? (
+        <div className="border-b border-brand-gold/30 bg-brand-navy px-4 py-2.5 text-center text-sm text-brand-ivory sm:text-base">
+          {firmInfo.complianceBanner}
+        </div>
+      ) : null}
 
       <nav
         aria-label="Main navigation"
@@ -45,24 +49,24 @@ export function Navbar() {
             : "bg-brand-ivory/80 backdrop-blur-sm"
         )}
       >
-        <div className="section-frame flex h-16 items-center justify-between">
+        <div className="section-frame flex h-[4.5rem] items-center justify-between">
           <Link
             href="#home"
-            className="font-heading text-xl font-semibold text-brand-navy"
+            className="font-heading text-2xl font-semibold text-brand-navy"
             aria-label="Go to home"
           >
-            {firmInfo.name}
+            {firmDisplayName}
           </Link>
 
-          <ul className="hidden items-center gap-6 md:flex">
+          <ul className="hidden items-center gap-7 md:flex">
             {navItems.map((item) => (
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="group relative text-sm font-medium text-brand-text transition-colors hover:text-brand-navy"
+                  className="group relative text-[15px] font-medium text-brand-text transition-colors hover:text-brand-navy lg:text-base"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-brand-gold transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-brand-gold transition-all duration-300 group-hover:w-full" />
                 </Link>
               </li>
             ))}
@@ -81,7 +85,7 @@ export function Navbar() {
               </SheetTrigger>
               <SheetContent side="right">
                 <SheetHeader>
-                  <SheetTitle>{firmInfo.name}</SheetTitle>
+                  <SheetTitle>{firmDisplayName}</SheetTitle>
                   <SheetDescription>
                     {sectionContent.navbar.mobileDescription}
                   </SheetDescription>
@@ -91,7 +95,7 @@ export function Navbar() {
                     <SheetClose asChild key={item.label}>
                       <Link
                         href={item.href}
-                        className="rounded-md px-2 py-2 text-sm font-medium text-brand-navy transition-colors hover:bg-brand-navy/5"
+                        className="rounded-md px-2 py-2 text-base font-medium text-brand-navy transition-colors hover:bg-brand-navy/5"
                       >
                         {item.label}
                       </Link>

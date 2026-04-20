@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" fill="#F4F7F2"/>
+  <rect x="45" y="45" width="1110" height="810" rx="22" fill="#FFFFFF" stroke="#D2E4D0" stroke-width="2"/>
+  <rect x="80" y="90" width="1040" height="84" rx="12" fill="#1F7A3A"/>
+  <text x="600" y="144" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="38" font-weight="700">DAINIK BHASKAR</text>
+  <rect x="80" y="210" width="1040" height="280" rx="14" fill="#ECF8EF"/>
+  <rect x="110" y="244" width="640" height="28" rx="8" fill="#1F7A3A" fill-opacity="0.3"/>
+  <rect x="110" y="286" width="600" height="18" rx="6" fill="#1F7A3A" fill-opacity="0.22"/>
+  <rect x="110" y="318" width="570" height="18" rx="6" fill="#1F7A3A" fill-opacity="0.22"/>
+  <rect x="110" y="350" width="620" height="18" rx="6" fill="#1F7A3A" fill-opacity="0.22"/>
+  <rect x="110" y="382" width="480" height="18" rx="6" fill="#1F7A3A" fill-opacity="0.22"/>
+  <rect x="780" y="244" width="300" height="214" rx="12" fill="#BEE3C6"/>
+  <text x="930" y="352" text-anchor="middle" fill="#22543D" font-family="Arial, sans-serif" font-size="30" font-weight="700">PHOTO</text>
+  <rect x="80" y="532" width="500" height="250" rx="14" fill="#F3FAF4" stroke="#D8ECDC"/>
+  <rect x="620" y="532" width="500" height="250" rx="14" fill="#F3FAF4" stroke="#D8ECDC"/>
+  <text x="600" y="828" text-anchor="middle" fill="#3E5F4A" font-family="Arial, sans-serif" font-size="26" font-weight="600">Replace with actual clipping image</text>
+</svg>

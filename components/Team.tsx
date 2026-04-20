@@ -22,7 +22,7 @@ export function Team() {
           <p className="section-subtitle">{sectionContent.team.subtitle}</p>
         </motion.div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {partners.map((partner, index) => (
             <motion.div
               key={partner.name}
@@ -35,14 +35,14 @@ export function Team() {
                 <CardHeader>
                   <Image
                     src={partner.image}
-                    alt={`Passport-size placeholder of ${partner.name}`}
-                    width={140}
-                    height={180}
-                    className="h-[180px] w-[140px] rounded-md border border-brand-navy/15 object-cover"
+                    alt={`Partner profile of ${partner.name}`}
+                    width={170}
+                    height={220}
+                    className="h-[220px] w-[170px] rounded-md border border-brand-navy/15 object-cover"
                   />
-                  <CardTitle className="pt-4 text-xl text-brand-navy">{partner.name}</CardTitle>
+                  <CardTitle className="pt-4 text-xl text-brand-navy sm:text-2xl">{partner.name}</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-2 text-sm text-brand-light">
+                <CardContent className="space-y-2 text-base text-brand-light">
                   <p>{partner.qualification}</p>
                   <p>{partner.membershipNumber}</p>
                   <p className="leading-6">{partner.bio}</p>

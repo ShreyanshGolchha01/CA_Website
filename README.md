@@ -1,5 +1,44 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Contact Form Email Integration
+
+The contact form now sends submissions to email through `app/api/contact/route.ts`.
+Each email is sent in a clear table format with:
+
+- Name
+- Email
+- Phone
+- Message
+- Submitted time
+- User agent
+
+### Setup
+
+1. Create a `.env.local` file in the project root.
+2. Copy values from `.env.example`.
+3. Fill SMTP credentials:
+
+```bash
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
+CONTACT_RECEIVER_EMAIL=caankitlunawat@gmail.com
+CONTACT_FROM_EMAIL=your-email@gmail.com
+```
+
+Notes:
+
+- For Gmail, use an App Password (not your normal login password).
+- If `CONTACT_RECEIVER_EMAIL` is not provided, emails are sent to the `firmInfo.email` value from `data/mock.ts`.
+- After editing `.env.local`, restart the dev server.
+
+### Troubleshooting
+
+- `Email service is not configured (...)`: one or more SMTP values are missing in `.env.local`.
+- `SMTP authentication failed`: credentials are wrong, or Gmail App Password is not used.
+- `Unable to connect to the email server`: check SMTP host/port and internet/firewall.
+
 ## Getting Started
 
 First, run the development server:

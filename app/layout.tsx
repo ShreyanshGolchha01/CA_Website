@@ -13,9 +13,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Sharma & Associates | Chartered Accountants",
+  title: "Ankit Lunawat & Associates | Chartered Accountants",
   description:
-    "Sharma & Associates is a Chartered Accountant firm providing audit, taxation, compliance, and advisory services in India.",
+    "Ankit Lunawat & Associates is a trusted Chartered Accountant firm in Gotegaon, Narsinghpur (MP), providing GST, Income Tax, Audit, and Business Advisory services.",
 };
 
 export default function RootLayout({

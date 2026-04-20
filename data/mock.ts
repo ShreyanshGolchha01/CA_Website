@@ -55,25 +55,57 @@ export type UsefulLink = {
   url: string;
 };
 
+export type MediaCoverageItem = {
+  id: number;
+  publication: string;
+  publicationColor: string;
+  badge: string;
+  date: string;
+  page: string;
+  cardImage: string;
+  fullImage: string;
+  headline: {
+    hi: string;
+    en: string;
+    mr: string;
+  };
+  details: {
+    hi: string[];
+    en: string[];
+    mr: string[];
+  };
+};
+
+export type MediaInterview = {
+  channel: string;
+  title: string;
+  date: string;
+  embedUrl: string;
+};
+
 export const firmInfo = {
-  name: "Sharma & Associates",
-  tagline: "Trusted Financial Guidance. Rooted in Integrity.",
-  subTagline: "Chartered Accountants | Est. 2005 | Jaipur",
-  city: "Jaipur",
-  establishedYear: "2005",
+  name: "Ankit Lunawat & Associates",
+  tagline: "Accurate, Timely, and Ethical Financial Guidance for Businesses and Professionals.",
+  subTagline: "Chartered Accountant Firm | Gotegaon, District Narsinghpur (MP)",
+  city: "Gotegaon, District Narsinghpur (MP)",
+  establishedYear: "",
   about:
-    "Sharma & Associates is a practice dedicated to audit, direct and indirect taxation, compliance reporting, and advisory support for businesses and individuals. Our team follows applicable professional standards and delivers clear, timely, and structured financial guidance.",
-  icaiMembershipNumber: "ICAI Membership No. 098765",
-  frn: "FRN 012345N",
-  address:
-    "Office No. 402, Horizon Business Centre, C-Scheme, Jaipur, Rajasthan 302001",
-  phone: "+91 98765 43210",
-  email: "info@sharmaassociates.in",
-  linkedin: "https://www.linkedin.com/company/sharma-associates-ca",
+    "Ankit Lunawat & Associates is a professionally managed CA firm delivering taxation, audit, accounts, registration, and business advisory services. We help individuals, businesses, traders, and professionals with structured financial management and compliance support.",
+  icaiMembershipNumber: "ICAI Registered Chartered Accountant",
+  frn: "",
+  address: "Ankit Lunawat & Associates, Gotegaon, District Narsinghpur (MP)",
+  phone: "8989510482",
+  whatsapp: "8989510482",
+  officeTimings: "Monday - Saturday, 10:30 AM to 7:00 PM",
+  email: "caankitlunawat@gmail.com",
+  instagram: "https://www.instagram.com/ankitlunawat_associates",
+  linkedin: "",
+  mapEmbedUrl: "https://www.google.com/maps?q=Ankit+lunawat+%26+Associates&output=embed",
+  mapShareUrl: "https://share.google/qCCEwR3d0vQn4oJZW",
   complianceBanner:
-    "Informational website maintained in line with ICAI guidelines for professional communication.",
+    "Trusted CA services focused on GST, Income Tax, Audit, and Business Advisory in Gotegaon (MP).",
   disclaimer:
-    "This website is for informational purposes only and does not constitute solicitation or advertisement.",
+    "This website is maintained for general professional information and client communication.",
 };
 
 export const navItems: NavItem[] = [
@@ -81,167 +113,129 @@ export const navItems: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Team", href: "#team" },
+  { label: "Articles", href: "#news" },
   { label: "Resources", href: "#resources" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const valuePillars: ValuePillar[] = [
   {
-    title: "Integrity",
+    title: "Vision",
     description:
-      "We maintain transparency, confidentiality, and professional ethics in every engagement.",
-    icon: "integrity",
-  },
-  {
-    title: "Expertise",
-    description:
-      "Our team applies updated technical knowledge across audit, taxation, and compliance matters.",
+      "To offer ethical, transparent, and high-quality financial and compliance services to individuals, startups, and established businesses.",
     icon: "expertise",
   },
   {
-    title: "Commitment",
+    title: "Mission",
     description:
-      "We prioritize responsive communication and timely delivery aligned with statutory timelines.",
+      "To simplify taxation and compliance, guide businesses with the right financial insights, and maintain trust through professional standards.",
     icon: "commitment",
+  },
+  {
+    title: "Practice Standards",
+    description:
+      "We focus on accurate, timely, and compliant service delivery with a strong commitment to client satisfaction.",
+    icon: "integrity",
   },
 ];
 
 export const services: ServiceItem[] = [
   {
-    title: "Statutory Audit",
+    title: "GST Services",
     description:
-      "Audit procedures and reporting as required under applicable laws and standards.",
-    icon: "statutoryAudit",
-  },
-  {
-    title: "Tax Audit",
-    description:
-      "Tax audit assignments with documentation and reporting support under relevant provisions.",
-    icon: "taxAudit",
-  },
-  {
-    title: "Income Tax Planning & Filing",
-    description:
-      "Return preparation, tax planning support, and filing compliance for individuals and entities.",
-    icon: "incomeTax",
-  },
-  {
-    title: "GST Registration & Returns",
-    description:
-      "GST registration assistance and periodic return filing with reconciliation support.",
+      "GST Registration, Monthly/Quarterly GST Returns Filing, GST Books and Reconciliation, Annual Return Filing (GSTR-9/9C), and GST Advisory and Compliance Support.",
     icon: "gst",
   },
   {
-    title: "Company Incorporation",
+    title: "Income Tax Services",
     description:
-      "Documentation and filing support for setting up companies under prescribed procedures.",
-    icon: "incorporation",
+      "ITR Filing for salaried, business, professionals, and HUF; business income computation; tax planning and optimization; TDS/TCS compliance; and notice handling with reply drafting.",
+    icon: "incomeTax",
   },
   {
-    title: "ROC Compliance",
+    title: "Audit & Assurance",
     description:
-      "Annual and event-based ROC filings along with statutory record maintenance guidance.",
-    icon: "roc",
+      "Income Tax Audit, GST Audit and Reconciliation, Internal Audit, Stock and Process Audit, and Project and Compliance Audit.",
+    icon: "taxAudit",
   },
   {
     title: "Accounting & Bookkeeping",
     description:
-      "Bookkeeping structures, accounting supervision, and periodic financial reporting assistance.",
+      "Monthly accounts management, ledger scrutiny and reconciliation, profit and loss with balance sheet preparation, MIS reporting, and cash flow statements.",
     icon: "bookkeeping",
   },
   {
-    title: "Financial Advisory (as per Regulation 191, CA Regulations 1988)",
+    title: "Business Registration & Licenses",
     description:
-      "Advisory support on financial structuring and compliance-oriented decision frameworks.",
+      "Firm registration, company registration guidance, MSME registration, shop and establishment registration, and PAN, TAN, and GST registration.",
+    icon: "incorporation",
+  },
+  {
+    title: "Project Report & Financial Assistance",
+    description:
+      "Detailed project reports for banks, CMA data preparation, working capital assessment, and loan file preparation with documentation.",
     icon: "advisory",
   },
 ];
 
 export const partners: Partner[] = [
   {
-    name: "CA Rohan Sharma",
-    qualification: "B.Com, FCA",
-    membershipNumber: "ICAI Membership No. 098765",
-    bio: "Handles statutory audits, internal controls review, and financial reporting engagements.",
+    name: "CA Ankit Lunawat",
+    qualification: "Founder & Proprietor",
+    membershipNumber: "Specialization: GST, Income Tax, Audit & Financial Advisory",
+    bio: "A qualified Chartered Accountant with expertise in handling taxation, audit, and business advisory services. Focused on delivering accurate, timely, and compliant solutions to clients.",
     image: "/images/partner-1.svg",
   },
   {
-    name: "CA Nisha Mehta",
-    qualification: "B.Com, ACA",
-    membershipNumber: "ICAI Membership No. 112233",
-    bio: "Focuses on direct tax advisory, return compliance, and assessment representation support.",
+    name: "Srishti Lunawat",
+    qualification: "CA Semi Qualified",
+    membershipNumber: "Focus: Taxation, Accounting, GST, and Income Tax Compliance",
+    bio: "Assists in taxation, accounting, and compliance work with strong knowledge in GST and Income Tax matters. Plays a key role in supporting client servicing and documentation.",
     image: "/images/partner-2.svg",
   },
   {
-    name: "CA Arvind Kulkarni",
-    qualification: "B.Com, FCA, DISA",
-    membershipNumber: "ICAI Membership No. 223344",
-    bio: "Leads GST compliance systems, ROC reporting calendars, and process-oriented advisory.",
+    name: "Adv. Mayank Lunawat",
+    qualification: "Tax Practitioner & Legal Advisor",
+    membershipNumber: "Focus: Tax Notices, Representations, and Legal Compliance",
+    bio: "Handles taxation matters, legal compliance, and advisory services. Provides support in handling notices, representations, and legal aspects related to tax matters.",
     image: "/images/partner-3.svg",
+  },
+  {
+    name: "Garima Lunawat",
+    qualification: "MBA (Finance & Management)",
+    membershipNumber: "Focus: Business Advisory, Financial Planning, and Client Coordination",
+    bio: "Supports in business advisory, financial planning, and client coordination. Focused on improving client experience and operational efficiency.",
+    image: "/images/partner-4.svg",
   },
 ];
 
 export const articles: Article[] = [
   {
-    title: "Key Changes in Budget 2024",
+    title: "GST Services for Businesses and Professionals",
     excerpt:
-      "A concise overview of direct and indirect tax changes relevant for businesses and salaried taxpayers.",
-    date: "15 Feb 2026",
+      "Covers GST registration, monthly or quarterly return filing, books reconciliation, annual return filing (GSTR-9/9C), and advisory support.",
+    date: "Service Overview",
   },
   {
-    title: "GST Annual Return Guide",
+    title: "Income Tax Filing and Compliance Support",
     excerpt:
-      "Checklist-based guidance for reconciling data and preparing annual GST returns accurately.",
-    date: "02 Mar 2026",
+      "Includes ITR filing for salaried, business, professionals, and HUF, along with tax planning, TDS/TCS compliance, and notice handling support.",
+    date: "Service Overview",
   },
   {
-    title: "New ITR Forms Explained",
+    title: "Audit, Accounts, and Financial Advisory",
     excerpt:
-      "Summary of form-level updates, revised disclosures, and filing points for the current year.",
-    date: "21 Mar 2026",
+      "Provides audit and assurance, bookkeeping, registration support, project reports for banks, CMA data preparation, and working capital assessment.",
+    date: "Service Overview",
   },
 ];
 
 export const videoResources: VideoResource[] = [
-  {
-    title: "Budget 2024 in 12 Minutes",
-    summary: "Educational walkthrough of major compliance updates and reporting implications.",
-    duration: "12 min",
-    embedUrl: "https://www.youtube.com/embed/VIDEO_ID_BUDGET",
-  },
-  {
-    title: "GST Return Reconciliation Basics",
-    summary: "Step-by-step explanation of periodic GST reconciliation checkpoints.",
-    duration: "10 min",
-    embedUrl: "https://www.youtube.com/embed/VIDEO_ID_GST",
-  },
-  {
-    title: "ITR Filing Documentation Checklist",
-    summary: "A practical checklist of records commonly needed before filing income tax returns.",
-    duration: "9 min",
-    embedUrl: "https://www.youtube.com/embed/VIDEO_ID_ITR",
-  },
+  // Fill with real video resources.
 ];
 
 export const professionalUpdates: ProfessionalUpdate[] = [
-  {
-    source: "ICAI",
-    title: "Advisory on Documentation Standards",
-    summary:
-      "Recent ICAI communication emphasizes quality documentation and audit trail clarity for assignments.",
-  },
-  {
-    source: "MCA",
-    title: "Annual Filing Form Timeline Update",
-    summary:
-      "MCA circular updated timelines and fee implications for select annual compliance forms.",
-  },
-  {
-    source: "Income Tax Department",
-    title: "E-Filing Utility Revision Note",
-    summary:
-      "Updated utility version issued with clarifications on validation checks for specific schedules.",
-  },
+  // Fill with actual professional updates.
 ];
 
 export const usefulLinks: UsefulLink[] = [
@@ -255,26 +249,129 @@ export const usefulLinks: UsefulLink[] = [
   { title: "SEBI", url: "https://www.sebi.gov.in" },
 ];
 
+export const mediaCoverage: MediaCoverageItem[] = [
+  {
+    id: 1,
+    publication: "Nai Dunia",
+    publicationColor: "#F59E0B",
+    badge: "City Coverage",
+    date: "12 Dec 2025",
+    page: "Page IV",
+    cardImage: "/images/naidunia-full-page.jpeg",
+    fullImage: "/images/naidunia-full-page.jpeg",
+    headline: {
+      hi: "शहर को बस अतिक्रमण मुक्त कर दें, तो बन जाएगा महानगर",
+      en: "Encroachment-Free City Vision Highlighted in Coverage",
+      mr: "अतिक्रमणमुक्त शहराच्या संकल्पनेवर सविस्तर वृत्तांकन",
+    },
+    details: {
+      hi: [
+        "नईदुनिया के शहर संस्करण में स्थानीय मुद्दों और सामाजिक गतिविधियों पर प्रमुख कवरेज।",
+        "मुख्य शीर्षक के साथ ग्राउंड रिपोर्ट और फोटो कवरेज शामिल।",
+      ],
+      en: [
+        "Featured in Nai Dunia city edition with prominent local civic coverage.",
+        "Includes headline story, supporting columns, and event visuals.",
+      ],
+      mr: [
+        "नवदुनिया शहर आवृत्तीत स्थानिक प्रश्नांवरील मुख्य बातमी.",
+        "मुख्य मथळ्यासह फोटो आणि पूरक स्तंभ प्रकाशित.",
+      ],
+    },
+  },
+  {
+    id: 2,
+    publication: "Nai Dunia",
+    publicationColor: "#f5590b",
+    badge: "Expert View",
+    date: "21 Oct 2025",
+    page: "Business Column",
+    cardImage: "/images/naidunia-repo-rate.jpeg",
+    fullImage: "/images/naidunia-repo-rate.jpeg",
+    headline: {
+      hi: "आरबीआई की रेपो रेट में कटौती से राहत संभव",
+      en: "Possible Relief from RBI Repo Rate Cut",
+      mr: "आरबीआय रेपो दर कपातीमुळे दिलासा शक्य",
+    },
+    details: {
+      hi: [
+        "रेपो रेट में कटौती का असर होम, कार और बिजनेस लोन की EMI पर पड़ सकता है।",
+        "वित्तीय अनुशासन और सही उत्पाद चयन से बचत बेहतर हो सकती है।",
+      ],
+      en: [
+        "Repo rate reduction may support affordability across home, car, and business loans.",
+        "Disciplined planning and product selection can improve savings outcomes.",
+      ],
+      mr: [
+        "रेपो दर कपातीचा परिणाम विविध कर्जांच्या परतफेडीवर होऊ शकतो.",
+        "योग्य नियोजन आणि उत्पाद निवडीमुळे बचत अधिक प्रभावी होते.",
+      ],
+    },
+  },
+  {
+    id: 3,
+    publication: "Patrika",
+    publicationColor: "#0C447C",
+    badge: "Expert View",
+    date: "04 Jul 2025",
+    page: "Page 8",
+    cardImage: "/images/patrika-gold-investment.jpeg",
+    fullImage: "/images/patrika-gold-investment.jpeg",
+    headline: {
+      hi: "लॉन्ग टाइम सेविंग के लिए जबलपुरियंस को रास आ रहा गोल्ड इन्वेस्टमेंट",
+      en: "Gold Investment Gaining Attention for Long-Term Savings",
+      mr: "दीर्घकालीन बचतीसाठी गोल्ड इन्व्हेस्टमेंट लोकप्रिय",
+    },
+    details: {
+      hi: [
+        "डिजिटल गोल्ड, गोल्ड ETF और सॉवरेन गोल्ड बॉन्ड जैसे विकल्प चर्चा में रहे।",
+        "विशेषज्ञ मत में व्यवस्थित निवेश और जोखिम संतुलन पर जोर दिया गया।",
+      ],
+      en: [
+        "The article highlights digital gold, ETFs, and sovereign bonds as key options.",
+        "Expert commentary emphasizes consistent investing and risk balance.",
+      ],
+      mr: [
+        "डिजिटल गोल्ड, ETF आणि सॉव्हरिन बॉन्ड या पर्यायांवर लेखात भर.",
+        "तज्ञांच्या मते नियोजनबद्ध गुंतवणूक आणि जोखीम संतुलन महत्त्वाचे.",
+      ],
+    },
+  },
+];
+
+export const featuredPublications: string[] = [];
+
+export const mediaInterviews: MediaInterview[] = [
+  // Optional: Add TV/web interviews with embeddable URLs when available.
+];
+
 export const sectionContent = {
   navbar: {
     mobileDescription: "Navigate through the website sections.",
   },
   hero: {
-    eyebrow: "Chartered Accountants",
+    eyebrow: "Ankit Lunawat & Associates",
     cta: "Get In Touch",
+    placeholderTitle: "Professional Financial Services",
+    placeholderSubtitle: "Official firm profile and details will be updated shortly.",
   },
   about: {
-    title: "About The Firm",
+    title: "About Us",
+    placeholderDescription: "Firm profile details will be updated soon.",
+    registrationPending: "Registration details will be updated soon.",
   },
   services: {
-    title: "Services",
+    title: "Our Services",
     subtitle:
-      "The following services are offered in an informative mode and are executed as per applicable professional and statutory requirements.",
+      "We provide structured and reliable support across GST, Income Tax, audit, accounting, registration, and financial assistance requirements.",
+    emptyStateTitle: "Service details will be added soon.",
+    emptyStateDescription: "We will update this section with actual service offerings.",
   },
   team: {
-    title: "Team",
+    title: "Our Team",
     subtitle:
-      "Meet our professionals with experience in audit, taxation, compliance, and reporting assignments.",
+      "Meet the professionals supporting taxation, audit, legal compliance, and financial advisory services.",
+    emptyState: "Team profiles will be published after final review.",
   },
   resources: {
     title: "Educational Resources",
@@ -282,21 +379,42 @@ export const sectionContent = {
       "Articles, educational video placeholders, and regulatory updates for general awareness.",
     articlesTitle: "Articles",
     videosTitle: "Watch & Learn",
+    videosComingSoonTitle: "Watch & Learn: Coming Soon",
+    videosComingSoonDescription:
+      "Practical videos on GST, Income Tax, Audit, and Compliance will be published here very soon. We are preparing clear and useful explainers for clients.",
     updatesTitle: "Professional Updates",
     embedPlaceholder: "Embed-ready YouTube slot",
     embedUrlLabel: "Embed URL",
+    articlesEmpty: "No articles added yet.",
+    videosEmpty: "No video resources added yet.",
+    updatesEmpty: "No professional updates added yet.",
+  },
+  news: {
+    title: "Articles and Blogs",
+    // subtitle:
+    //   "Media coverage highlighting our work in taxation, audit, and compliance across trusted publications.",
+    featuredInTitle: "Also Featured In",
+    interviewsTitle: "TV & Video Mentions",
+    interviewsSubtitle: "Optional interview embeds can be added here whenever links are available.",
   },
   usefulLinks: {
     title: "Useful Links",
     subtitle: "Direct access to important government and regulatory portals.",
+    emptyState: "Useful links will be listed soon.",
   },
   contact: {
     title: "Contact",
     subtitle:
-      "For professional queries, please use the details below or submit the contact form.",
+      "For professional queries, please reach out using the office details below or submit the contact form.",
     officeDetailsTitle: "Office Details",
     formTitle: "Send a Message",
+    instagramText: "@ankitlunawat_associates",
     linkedinText: "View Professional Profile",
+    whatsappLabel: "WhatsApp",
+    officeHoursLabel: "Office Timings",
+    mapLinkText: "Open in Google Maps",
+    detailsPending: "Contact details will be updated soon.",
+    mapPending: "Map location will be added after address confirmation.",
     formLabels: {
       name: "Name",
       email: "Email",
@@ -304,13 +422,17 @@ export const sectionContent = {
       message: "Message",
       messagePlaceholder: "Write your query here",
       submit: "Submit",
+      submitting: "Sending...",
     },
     successTitle: "Message submitted successfully.",
     successDescription:
-      "This demo form is frontend-only. Your details are not sent to a backend.",
+      "Your details have been shared with our team by email. We will contact you shortly.",
+    errorTitle: "Unable to send message.",
+    errorDescription:
+      "Please try again in a moment, or contact us directly via phone or email.",
   },
   footer: {
-    memberLine: "Member of The Institute of Chartered Accountants of India",
+    memberLine: "Professional taxation, audit, and advisory services in Gotegaon, Narsinghpur (MP)",
     quickLinks: "Quick Links",
     rights: "All rights reserved.",
   },

@@ -5,11 +5,15 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 import { firmInfo, partners, sectionContent } from "@/data/mock";
+import { cn } from "@/lib/utils";
 
 import { Button } from "./ui/button";
 
 export function Hero() {
   const profile = partners[0];
+  const hasProfile = Boolean(profile);
+  const title = firmInfo.tagline || sectionContent.hero.placeholderTitle;
+  const subtitle = firmInfo.subTagline || sectionContent.hero.placeholderSubtitle;
 
   return (
     <section
@@ -41,24 +45,25 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      <div className="section-frame relative grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-center">
+      <div
+        className={cn(
+          "section-frame relative grid gap-12",
+          hasProfile ? "lg:grid-cols-[1.25fr_0.75fr] lg:items-center" : null
+        )}
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ease: "easeOut" }}
         >
-          <p className="text-sm uppercase tracking-[0.24em] text-brand-gold">
+          <p className="text-sm uppercase tracking-[0.24em] text-brand-gold sm:text-base">
             {sectionContent.hero.eyebrow}
           </p>
-          <h1 className="mt-5 max-w-3xl text-4xl leading-tight sm:text-5xl lg:text-6xl">
-            {firmInfo.tagline}
-          </h1>
-          <p className="mt-6 max-w-2xl text-base text-brand-ivory/85 sm:text-lg">
-            {firmInfo.subTagline}
-          </p>
+          <h1 className="mt-5 max-w-4xl text-4xl leading-tight sm:text-5xl lg:text-6xl">{title}</h1>
+          <p className="mt-6 max-w-3xl text-base text-brand-ivory/85 sm:text-lg">{subtitle}</p>
           <div className="gold-divider" />
 
-          <div className="mt-8">
+          <div className="mt-9">
             <Button asChild variant="gold" size="lg">
               <a href="#contact" aria-label="Scroll to contact section">
                 {sectionContent.hero.cta}
@@ -68,27 +73,29 @@ export function Hero() {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, delay: 0.1, ease: "easeOut" }}
-          className="mx-auto w-full max-w-[280px]"
-        >
-          <div className="rounded-2xl border border-brand-gold/30 bg-white/5 p-4 shadow-soft backdrop-blur-sm">
-            <Image
-              src={profile.image}
-              alt="Passport-style partner placeholder"
-              width={240}
-              height={300}
-              className="h-auto w-full rounded-xl border border-brand-ivory/20 object-cover"
-              priority
-            />
-            <div className="mt-4 border-t border-brand-gold/30 pt-4 text-center">
-              <p className="text-sm font-semibold text-brand-ivory">{profile.name}</p>
-              <p className="mt-1 text-xs text-brand-ivory/75">{profile.qualification}</p>
+        {profile ? (
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, delay: 0.1, ease: "easeOut" }}
+            className="mx-auto w-full max-w-[320px]"
+          >
+            <div className="rounded-2xl border border-brand-gold/30 bg-white/5 p-5 shadow-soft backdrop-blur-sm">
+              <Image
+                src={profile.image}
+                alt="Firm partner"
+                width={280}
+                height={350}
+                className="h-auto w-full rounded-xl border border-brand-ivory/20 object-cover"
+                priority
+              />
+              <div className="mt-4 border-t border-brand-gold/30 pt-4 text-center">
+                <p className="text-base font-semibold text-brand-ivory">{profile.name}</p>
+                <p className="mt-1 text-sm text-brand-ivory/75">{profile.qualification}</p>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        ) : null}
       </div>
     </section>
   );

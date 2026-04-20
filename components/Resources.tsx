@@ -58,36 +58,62 @@ export function Resources() {
         <div className="mt-12">
           <h3 className="text-2xl text-brand-navy">{sectionContent.resources.videosTitle}</h3>
           <div className="mt-5 grid gap-5 md:grid-cols-3">
-            {videoResources.map((video, index) => (
+            {videoResources.length > 0 ? (
+              videoResources.map((video, index) => (
+                <motion.div
+                  key={video.title}
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{ duration: 0.45, delay: index * 0.06, ease: "easeOut" }}
+                >
+                  <Card className="h-full">
+                    <CardHeader>
+                      <div className="flex aspect-video items-center justify-center rounded-lg border border-brand-navy/15 bg-brand-ivory">
+                        <div className="text-center">
+                          <PlayCircle className="mx-auto h-8 w-8 text-brand-gold" aria-hidden="true" />
+                          <p className="mt-2 text-xs uppercase tracking-[0.18em] text-brand-light">
+                            {sectionContent.resources.embedPlaceholder}
+                          </p>
+                        </div>
+                      </div>
+                      <CardTitle className="text-lg text-brand-navy">{video.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm leading-6 text-brand-light">{video.summary}</p>
+                      <p className="mt-4 text-xs text-brand-navy/70">{video.duration}</p>
+                      <p className="mt-1 text-xs text-brand-navy/70">
+                        {sectionContent.resources.embedUrlLabel}: {video.embedUrl}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))
+            ) : (
               <motion.div
-                key={video.title}
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.45, delay: index * 0.06, ease: "easeOut" }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
+                className="md:col-span-3"
               >
-                <Card className="h-full">
+                <Card className="border border-dashed border-brand-gold/50 bg-brand-ivory/70">
                   <CardHeader>
-                    <div className="flex aspect-video items-center justify-center rounded-lg border border-brand-navy/15 bg-brand-ivory">
-                      <div className="text-center">
-                        <PlayCircle className="mx-auto h-8 w-8 text-brand-gold" aria-hidden="true" />
-                        <p className="mt-2 text-xs uppercase tracking-[0.18em] text-brand-light">
-                          {sectionContent.resources.embedPlaceholder}
-                        </p>
-                      </div>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full border border-brand-gold/40 bg-brand-gold/10">
+                      <PlayCircle className="h-6 w-6 text-brand-gold" aria-hidden="true" />
                     </div>
-                    <CardTitle className="text-lg text-brand-navy">{video.title}</CardTitle>
+                    <CardTitle className="text-xl text-brand-navy">
+                      {sectionContent.resources.videosComingSoonTitle}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm leading-6 text-brand-light">{video.summary}</p>
-                    <p className="mt-4 text-xs text-brand-navy/70">{video.duration}</p>
-                    <p className="mt-1 text-xs text-brand-navy/70">
-                      {sectionContent.resources.embedUrlLabel}: {video.embedUrl}
+                    <p className="text-base leading-7 text-brand-light">
+                      {sectionContent.resources.videosComingSoonDescription}
                     </p>
                   </CardContent>
                 </Card>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
 
